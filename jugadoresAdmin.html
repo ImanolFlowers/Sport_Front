@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jugadores.css">
+    <link rel="stylesheet" href="css/perfile.css">
+    <title>Jugadores</title>
+</head>
+<body>
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+        <img src="assets/logo.jpg" alt="Logo">
+        <span>LIGA DOMMSPORT</span>
+        </div>
+
+        <nav class="menu">
+        <button class="menu-btn" id="inicio" onclick="location.href='menu.html'">
+            <i class="fas fa-home"></i> Inicio
+        </button>
+
+        <button class="menu-btn" id="temporadas" onclick="location.href='temporadas.html'">
+            <i class="fas fa-flag-checkered"></i> Temporadas
+        </button>
+
+        <button class="menu-btn active" id="equipos" onclick="location.href='equipos.html'">
+            <i class="fas fa-users"></i> Equipos
+        </button>
+
+        <button class="menu-btn" id="jugadores" onclick="location.href='jugadores.html'">
+                <i class="fas fa-futbol"></i> Jugadores
+                </button>
+
+        <button class="menu-btn" id="partidos" onclick="location.href='partidos.html'">
+            <i class="fas fa-calendar-alt"></i> Partidos
+        </button>
+
+        <button class="menu-btn" id="tabla" onclick="location.href='tablaGeneral.html'">
+            <i class="fas fa-trophy"></i> Tabla
+        </button>
+        </nav>
+
+
+
+    </aside>
+
+    <main class="content" id="contenido">
+        <h1 id="titulo-jugadores">Jugadores</h1>
+
+        <div id="lista-jugadores" class="jugadores-contenedor">
+            <p>Cargando jugadores...</p>
+        </div>
+
+
+        <div class="user-dropdown">
+            <span id="user-name">Cargando...</span>
+            <button id="dropdown-btn"><i class="fas fa-chevron-down"></i></button>
+
+                <div id="dropdown-menu" class="dropdown hidden">
+                    <button id="btn-perfil">Perfil</button>
+                    <button id="btn-usuarios">Usuarios</button>
+                    <button id="btn-logout">Cerrar sesión</button>
+                </div>
+        </div>
+
+        
+    </main>
+
+    <script src="js/jugadoresOcultar.js"></script>
+    <script src="js/fetch_temporadas/admin_temporada.js"></script>
+    <script src="js/fetch_jugadores/jugadores_getAdmin.js"></script>
+    <script src="js/fetch_perfil/perfil_get.js"></script>
+    <script src="js/fetch_perfil/perfil_patch.js"></script>
+    <script src="js/fetch_usuarios/usuario_delete.js"></script>
+    <script src="js/fetch_usuarios/usuario_get.js"></script>
+    <script src="js/fetch_usuarios/usuario_patch.js"></script>
+    
+</body>
+</html>

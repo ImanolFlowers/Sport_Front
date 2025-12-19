@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/perfile.css">
+    <link rel="stylesheet" href="css/usuarios.css">
+    <title>Usuarios</title>
+</head>
+<body>
+
+    <aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <img src="assets/logo.jpg" alt="Logo">
+    <span>LIGA DOMMSPORT</span>
+  </div>
+
+  <nav class="menu">
+    <button class="menu-btn" id="inicio" onclick="location.href='menu.html'"><i class="fas fa-home"></i> Inicio</button>
+    <button class="menu-btn" onclick="location.href='temporadas.html'"><i class="fas fa-flag-checkered"></i> Temporadas</button>
+    <button class="menu-btn" onclick="location.href='equipos.html'"><i class="fas fa-users"></i> Equipos</button>
+    <button class="menu-btn" onclick="location.href='partidos.html'"><i class="fas fa-calendar-alt"></i> Partidos</button>
+    <button class="menu-btn" onclick="location.href='tablaGeneral.html'"><i class="fas fa-trophy"></i> Tabla</button>
+  </nav>
+</aside>
+
+<!-- Contenido del perfil -->
+<main class="content">
+    <div class="perfil-container">
+    <div class="perfil-card">
+
+        <table class="tabla-usuarios">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Usuario</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Correo</th>
+      <th>Rol</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody id="tabla-usuarios-body">
+    <!--se cargan los usuario -->
+    <!-- tengo dudas de este -->
+  </tbody>
+</table>
+
+
+<!-- modal para editar al usuario -->
+<div id="modal-editar" class="modal hidden">
+    <div class="modal-content">
+
+      <h2>Editar Usuario</h2>
+
+      <label>Usuario</label>
+      <input type="text" id="edit-username">
+
+      <label>Nombre</label>
+      <input type="text" id="edit-name">
+
+      <label>Apellidos</label>
+      <input type="text" id="edit-apellidos">
+
+      <label>Correo</label>
+      <input type="email" id="edit-email">
+
+      <label>Teléfono</label>
+      <input type="text" id="edit-telefono">
+
+      <div class="modal-actions">
+        <button id="btn-cancelar-editar">Cancelar</button>
+        <button id="btn-guardar-editar">Guardar Cambios</button>
+      </div>
+
+    </div>
+</div>
+
+
+    </div>
+    </div>
+
+    <script src="js/fetch_usuarios/usuario_get.js"></script>
+    <script src="js/fetch_usuarios/usuario_patch.js"></script>
+    <script src="js/fetch_usuarios/usuario_delete.js"></script>
+</body>
+</html>

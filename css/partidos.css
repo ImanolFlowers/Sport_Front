@@ -1,0 +1,455 @@
+/* BOTON CREAR PARTIDO (con su id)  */
+#btn-crear-partido {
+  background: linear-gradient(135deg, #1a73e8, #4da3ff);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 20px;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.25s ease-in-out;
+}
+
+#btn-crear-partido:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1e80ff, #66b3ff);
+}
+
+#btn-crear-partido:active {
+  transform: scale(0.97);
+}
+
+
+/* MODAL FONDO (DE ESE TOMA EL MISMO ID)    */
+
+#modal-crear-partido {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#modal-crear-partido.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: #ffffff;
+  padding: 25px;
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-contenido h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #1a73e8;
+}
+.modal-contenido label {
+  font-weight: bold;
+  margin-top: 10px;
+  display: block;
+}
+
+.modal-contenido input,
+.modal-contenido select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  transition: border-color 0.25s;
+}
+
+.modal-contenido input:focus,
+.modal-contenido select:focus {
+  outline: none;
+  border-color: #1a73e8;
+}
+
+.modal-botones {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+/* BOTÓN GUARDAR */
+.btn-guardar {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-guardar:hover {
+  background: #1664cc;
+}
+
+/* BOTÓN CANCELAR */
+.btn-cancelar {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-cancelar:hover {
+  background: #d7352c;
+}
+
+
+/* ==== TARJETA DE PARTIDO ==== */
+.tarjeta-partido {
+    background: #ffffff;
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 6px solid #1e90ff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+/* Hover bonito */
+.tarjeta-partido:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Título de jornada */
+.tarjeta-partido h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1e90ff;
+}
+
+/* Equipos */
+.tarjeta-partido .equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Goles más grandes */
+.tarjeta-partido .marcador {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #222;
+}
+
+/* Detalles del partido */
+.tarjeta-partido .detalles {
+    font-size: 0.95rem;
+    color: #555;
+    margin-top: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* este boton es el de editar partido */
+.btn-refresh {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1e90ff;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-refresh i {
+    font-size: 1rem;
+}
+
+.btn-refresh:hover {
+    background: #1877cc;
+}
+
+
+/* modal de editar */
+/* Fondo oscuro borroso */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay.activo {
+  display: flex;
+}
+
+/* Tarjeta del modal */
+.modal-card {
+  width: 380px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  animation: modalUp 0.25s ease-out;
+}
+
+/* Animación */
+@keyframes modalUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* HEADER */
+.modal-header {
+  background: #2563eb;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* CUERPO */
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+  color: #1e293b;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #2563eb;
+  background: #fff;
+}
+
+/* FOOTER */
+.modal-footer {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-end;
+  background: #f1f5f9;
+}
+
+.modal-footer .btn-guardar {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-footer .btn-guardar:hover {
+  background: #1e40af;
+}
+
+/* Ajustar tamaño máximo del contenido del modal */
+.modal-contenido {
+  max-height: 80vh;   /* 👈 Altura máxima: 80% de la pantalla */
+  overflow-y: auto;   /* 👈 Scroll interno vertical */
+  padding-right: 15px; /* 👈 Para evitar que el scroll tape contenido */
+}
+
+/* Estilo del scroll (opcional, más bonito) */
+.modal-contenido::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-contenido::-webkit-scrollbar-thumb {
+  background: #a1a1a1;
+  border-radius: 10px;
+}
+
+.modal-contenido::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* boton para editar marcador */
+.btn-goles {
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    background: #1e90ff;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-goles i {
+    font-size: 1rem;
+}
+
+.btn-goles:hover {
+    background: #1877cc;
+}
+
+
+#modal-goles {
+    display: none;
+}
+
+#modal-goles.activo {
+    display: flex;
+}
+
+/* boton para el de eliminar partido */
+#btn-eliminar-partido {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.btn-eliminar-partido {
+    position: absolute;
+    top: 85px;
+    right: 10px;
+    background: #ec3705;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-eliminar-partido i {
+    font-size: 1rem;
+}
+
+.btn-eliminar-partido:hover {
+    background: #cc9918;
+}
+
+/* ================================
+   ESTILOS SEGÚN ESTADO DEL PARTIDO
+   ================================ */
+
+/* FUTURO → Normal */
+.tarjeta-partido.futuro {
+  border-left: 5px solid #1a73e8; /* Azul */
+}
+
+/* FINALIZADO → Grisado */
+.tarjeta-partido.finalizado {
+  border-left: 5px solid #777;
+  opacity: 0.8;
+  filter: grayscale(20%);
+}
+
+/* EN JUEGO → 🔥 Resaltado */
+.tarjeta-partido.en-juego {
+  border: 3px solid #00e676;          /* Verde brillante */
+  box-shadow: 0 0 15px #00e676;
+  animation: glow 1.6s infinite alternate;
+  transform: scale(1.02);
+}
+
+/* Animación glow suave */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px #00e676;
+  }
+  to {
+    box-shadow: 0 0 22px #00ff80;
+  }
+}
+

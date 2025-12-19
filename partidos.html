@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/partidos.css"> 
+    <link rel="stylesheet" href="css/perfile.css">
+    <title>Partidos</title>
+</head>
+
+<body>
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="logo">
+        <img src="assets/logo.jpg" alt="Logo">
+        <span>LIGA DOMMSPORT</span>
+        </div>
+
+        <nav class="menu">
+        <button class="menu-btn" id="inicio" onclick="location.href='menu.html'">
+            <i class="fas fa-home"></i> Inicio
+        </button>
+
+        <button class="menu-btn" id="temporadas" onclick="location.href='temporadas.html'">
+            <i class="fas fa-flag-checkered"></i> Temporadas
+        </button>
+
+        <button class="menu-btn" id="equipos" onclick="location.href='equipos.html'">
+            <i class="fas fa-users"></i> Equipos
+        </button>
+
+        <button class="menu-btn" id="jugadores" onclick="location.href='jugadores.html'">
+            <i class="fas fa-futbol"></i> Jugadores
+            </button>
+
+        <button class="menu-btn active" id="partidos" onclick="location.href='partidos.html'">
+            <i class="fas fa-calendar-alt"></i> Partidos
+        </button>
+
+        <button class="menu-btn" id="tabla" onclick="location.href='tablaGeneral.html'">
+            <i class="fas fa-trophy"></i> Tabla
+        </button>
+        </nav>
+
+    </aside>
+
+    <!-- contenido -->
+    <main class="content" id="contenido">
+        <h1>Partidos</h1>
+
+<!--btoton de crear partido-->
+<button id="btn-crear-partido" class="btn-crear"> Crear un partido</button>
+
+<!-- modal flotante para crear partido -->
+<div id="modal-crear-partido">
+    <div class="modal-contenido">
+
+        <h2>Crear Partido</h2>
+
+        <label>Fecha:</label>
+        <input type="date" id="fecha">
+
+        <label>Hora:</label>
+        <input type="time" id="hora">
+
+        <label>Jornada:</label>
+        <input type="number" id="jornada" min="1">
+
+        <label>Lugar de juego:</label>
+        <input type="text" id="lugar">
+
+        <label>Equipo local:</label>
+        <select id="equipoA">
+            <option value="">Seleccione...</option>
+        </select>
+
+        <label>Equipo visitante:</label>
+        <select id="equipoB">
+            <option value="">Seleccione...</option>
+        </select>
+
+        <div class="modal-botones">
+            <button id="guardar-partido" class="btn-guardar">Guardar partido</button>
+            <button id="cerrar-modal" class="btn-cancelar">Cancelar</button>
+        </div>
+
+    </div>
+</div>
+
+        <!-- lista de partido -->
+        <section id="lista-partidos"></section>
+        <div id="modal-editar-partido" class="modal-overlay">
+            <div class="modal-contenido">
+                <h2>Editar Partido</h2>
+
+                <h3>Estado del partido</h3>
+                <label>Estado:</label>
+                <select id="edit-estado">
+                    <option value="FUTURO">Futuro</option>
+                    <option value="EN_JUEGO">En juego</option>
+                    <option value="FINALIZADO">Finalizado</option>
+                    <option value="CANCELADO">Cancelado</option>
+                </select>
+
+
+                <div class="campo-editable">
+    <label>Fecha:</label>
+    <input type="date" id="edit-fecha">
+        </div>
+
+        <div class="campo-editable">
+            <label>Hora:</label>
+            <input type="time" id="edit-hora">
+        </div>
+
+        <div class="campo-editable">
+            <label>Jornada:</label>
+            <input type="number" id="edit-jornada" min="1">
+        </div>
+
+        <div class="campo-editable">
+            <label>Lugar de juego:</label>
+            <input type="text" id="edit-lugar">
+        </div>
+
+        <div class="campo-editable">
+            <label>Equipo local:</label>
+            <select id="edit-equipoA"></select>
+        </div>
+
+        <div class="campo-editable">
+            <label>Equipo visitante:</label>
+            <select id="edit-equipoB"></select>
+        </div>
+
+
+                <div class="modal-botones">
+                    <button id="guardar-edicion" class="btn-guardar">Actualizar</button>
+                    <button id="cerrar-editar" class="btn-cancelar">Cancelar</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- goles -->
+        <div id="modal-goles" class="modal-overlay">
+            <div class="modal-contenido">
+                <h2>Registrar Marcador</h2>
+
+                <label>Goles Equipo local</label>
+                <input type="number" id="golesA" min="0">
+
+                <label>Goles Equipo visitante</label>
+                <input type="number" id="golesB" min="0">
+
+                <div class="modal-botones">
+                <button id="guardar-goles" class="btn-guardar">Guardar</button>
+                <button id="cerrar-goles" class="btn-cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="user-dropdown">
+            <span id="user-name">Cargando...</span>
+            <button id="dropdown-btn"><i class="fas fa-chevron-down"></i></button>
+
+                <div id="dropdown-menu" class="dropdown hidden">
+                    <button id="btn-perfil">Perfil</button>
+                    <button id="btn-usuarios">Usuarios</button>
+                    <button id="btn-logout">Cerrar sesión</button>
+                </div>
+        </div>
+</main>
+
+    <script src="js/partidos.js"></script>
+    <script src="js/fetch_temporadas/admin_temporada.js"></script>
+    <script src="js/fetch_partidos/partidos_post.js"></script>
+    <script src="js/fetch_partidos/partidos_get.js"></script>
+    <script src="js/fetch_partidos/ocultar.js"></script>
+    <script src="js/fetch_partidos/partidos_patch.js"></script>
+    <script src="js/fetch_partidos/partidos_marcador.js"></script>
+    <script src="js/fetch_partidos/partidos_delete.js"></script>
+    <script src="js/fetch_perfil/perfil_get.js"></script>
+    <script src="js/perfil.js"></script>
+    <script src="js/usuarios.js"></script>
+    <script src="js/fetch_usuarios/usuario_get.js"></script>
+    <script src="js/jugadores.js"></script>
+    <script src="js/jugadoresOcultar.js"></script>
+</body>
+</html>

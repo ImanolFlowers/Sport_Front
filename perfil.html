@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/perfile.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <img src="assets/logo.jpg" alt="Logo">
+    <span>LIGA DOMMSPORT</span>
+  </div>
+
+  <nav class="menu">
+      <button class="menu-btn" id="inicio" onclick="location.href='menu.html'">
+        <i class="fas fa-home"></i> Inicio
+      </button>
+
+      <button class="menu-btn" id="temporadas" onclick="location.href='temporadas.html'">
+        <i class="fas fa-flag-checkered"></i> Temporadas
+      </button>
+
+      <button class="menu-btn active" id="equipos" onclick="location.href='equipos.html'">
+        <i class="fas fa-users"></i> Equipos
+      </button>
+
+      <button class="menu-btn" id="partidos" onclick="location.href='partidos.html'">
+        <i class="fas fa-calendar-alt"></i> Partidos
+      </button>
+
+      <button class="menu-btn" id="tabla" onclick="location.href='tablaGeneral.html'">
+        <i class="fas fa-trophy"></i> Tabla
+      </button>
+    </nav>
+</aside>
+
+<!-- Contenido del perfil -->
+<main class="content">
+  <div class="perfil-container">
+    <div class="perfil-card">
+
+      <div class="perfil-header">
+        <i class="fas fa-user-circle perfil-icon"></i>
+        <h2 id="perfil-nombre">Cargando...</h2>
+        <p id="perfil-rol"></p>
+      </div>
+
+<div class="perfil-info">
+
+  <div class="fila">
+    <label>Usuario</label>
+    <input type="text" id="perfil-username" class="input-perfil">
+  </div>
+
+  <div class="fila">
+    <label>Nombre</label>
+    <input type="text" id="perfil-name" class="input-perfil">
+  </div>
+
+  <div class="fila">
+    <label>Apellidos</label>
+    <input type="text" id="perfil-apellidos" class="input-perfil">
+  </div>
+
+  <div class="fila">
+    <label>Correo</label>
+    <input type="email" id="perfil-email" class="input-perfil">
+  </div>
+
+  <div class="fila">
+    <label>Teléfono</label>
+    <input type="text" id="perfil-telefono" class="input-perfil">
+  </div>
+
+  <p>La contraseña debe tener mas de 6 digitos para actualizar</p>
+  <div class="fila">
+    <label>Contraseña</label>
+    <input type="password" id="perfil-password" class="input-perfil" placeholder="Nueva contraseña">
+  </div>
+
+</div>
+
+
+
+      <!-- boton para actualizar el perfil -->
+<div class="perfil-actions">
+  <button id="btn-guardar-perfil" class="btn-guardar">
+    <i class="fas fa-save"></i> Guardar datos
+  </button>
+</div>
+
+      
+
+    </div>
+  </div>
+</main>
+
+
+<script src="js/fetch_perfil/perfil_get.js"></script>
+<script src="js/fetch_perfil/perfil_patch.js"></script>
+<script src="js/fetch_temporadas/admin_temporada.js"></script>
+
+</body>
+</html>

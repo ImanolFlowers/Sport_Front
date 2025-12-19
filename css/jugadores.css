@@ -1,0 +1,328 @@
+.btn-crear-jugador {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    transition: background 0.2s ease-in-out;
+}
+
+.btn-crear-jugador:hover {
+    background: #187bcd;
+}
+
+
+/* boton crear jugadores */
+/* Fondo del modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(3px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Mostrar modal */
+.modal.activo {
+  display: flex;
+}
+
+/* Caja del modal */
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.modal-contenido h2 {
+  margin-top: 0;
+}
+
+/* Inputs */
+.modal-contenido input,
+.modal-contenido select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Botones */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-guardar {
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.btn-cancelar {
+  background: #ccc;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+
+/* lista de los jugadores */
+/* GRID */
+.jugadores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* TARJETA */
+.tarjeta-jugador {
+  background: linear-gradient(135deg, #ffffff, #f1f7ff);
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+  transition: transform 0.27s ease, box-shadow 0.27s ease;
+  border: solid 2px #1e90ff20;
+}
+
+.tarjeta-jugador:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+}
+
+/* HEADER: número y posición */
+.jugador-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* NÚMERO GRANDE */
+.jugador-numero {
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #1e90ff;
+  letter-spacing: 2px;
+}
+
+/* POSICIÓN */
+.jugador-posicion {
+  background: #1e90ff;
+  color: white;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+/* NOMBRE DEL JUGADOR */
+.jugador-nombre {
+  margin-top: 12px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* DETALLE */
+.jugador-detalle {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+  background: #e9f3ff;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+
+/* BOTON DEL EDITAR JUGADOR */
+.btn-editar-jugador {
+  margin-top: 12px;
+  background: #1e90ff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.2s ease-in-out, transform 0.2s;
+}
+
+.btn-editar-jugador:hover {
+  background: #187bcd;
+  transform: scale(1.03);
+}
+
+
+/* modal para editar jugadores */
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(3px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.activo {
+  display: flex;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 350px;
+}
+
+
+/* BOTON ELIMINAR PARTIDO */
+.btn-eliminar-jugador {
+  margin-top: 8px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  transition: background 0.2s ease-in-out, transform 0.2s;
+}
+
+.btn-eliminar-jugador:hover {
+  background: #d63030;
+  transform: scale(1.03);
+}
+
+/* VISUALIZA LAS TARJETAS DE JUGADORES PUBLICAS */
+/* ============================================
+   CONTENEDOR DE JUGADORES (GRID)
+============================================ */
+.jugadores-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+
+/* ============================================
+   TARJETA DE JUGADOR (compacta + deportiva)
+============================================ */
+.tarjeta-jugador {
+  background: #1d6b92; /* Azul oscuro deportivo */
+  border-radius: 14px;
+  padding: 15px 18px;
+  color: #e6f1ff;
+
+  border: 1.5px solid #1cefff;
+  box-shadow: 0 5px 14px rgba(0,0,0,0.35);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Efecto hover */
+.tarjeta-jugador:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Líneas deportivas */
+.tarjeta-jugador::before {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 40px;
+  top: -15px;
+  left: -15%;
+  transform: rotate(-13deg);
+  background: rgba(255,255,255,0.05);
+}
+
+.tarjeta-jugador::after {
+  content: "";
+  position: absolute;
+  width: 130%;
+  height: 40px;
+  bottom: -15px;
+  left: -15%;
+  transform: rotate(-13deg);
+  background: rgba(255,255,255,0.05);
+}
+
+
+/* ============================================
+   HEADER (número y posición)
+============================================ */
+.jugador-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.jugador-numero {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1cefff;
+}
+
+.jugador-posicion {
+  background: #1cefff;
+  color: #0b0f19;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+
+/* ============================================
+   NOMBRE
+============================================ */
+.jugador-nombre {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ============================================
+   DETALLE DE POSICIÓN
+============================================ */
+.jugador-detalle {
+  font-size: 0.85rem;
+  color: #b8c4d6;
+}

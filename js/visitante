@@ -1,0 +1,14 @@
+// visitante.js
+document.addEventListener("DOMContentLoaded", () => {
+    const btnVisitante = document.getElementById("btn-visitante");
+    if (!btnVisitante) return;
+
+    btnVisitante.addEventListener("click", () => {
+        // 🔹 Limpiar cualquier token previo
+        localStorage.removeItem("token");
+        localStorage.setItem("rol", "VISITANTE"); // Guardar rol visitante en mayúsculas para consistencia
+
+        // 🔹 Redirigir al menú principal
+        window.location.href = "menu.html";
+    });
+});

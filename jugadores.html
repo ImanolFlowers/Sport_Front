@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jugadores.css">
+
+    <title>Jugadores</title>
+</head>
+<body>
+
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo">
+        <img src="assets/logo.jpg" alt="Logo">
+        <span>LIGA DOMMSPORT</span>
+        </div>
+
+        <nav class="menu">
+            <button class="menu-btn" id="inicio" onclick="location.href='menu.html'"><i class="fas fa-home"></i> Inicio</button>
+
+            <button class="menu-btn" id="temporadas" onclick="location.href='temporadas.html'">
+            <i class="fas fa-flag-checkered"></i> Temporadas
+            </button>
+
+            <button class="menu-btn" id="equipos" onclick="location.href='equipos.html'">
+            <i class="fas fa-users"></i> Equipos
+            </button>
+            <button class="menu-btn active" id="jugadores" onclick="location.href='jugadores.html'">
+            <i class="fas fa-futbol"></i> Jugadores
+            </button>
+            <button class="menu-btn" id="partidos" onclick="location.href='partidos.html'">
+            <i class="fas fa-calendar-alt"></i> Partidos
+            </button>
+            <button class="menu-btn" id="tabla" onclick="location.href='tablaGeneral.html'">
+            <i class="fas fa-trophy"></i> Tabla</button>
+        </nav>
+
+    </aside>
+
+    <main class="content" id="contenido">
+            <h1>Jugadores</h1>
+
+            <button id="btn-crear-jugador" class="btn-crear-jugador">
+            Dar de alta un jugador
+            </button>
+
+            <!-- MODAL PARA CREAR JUGADOR -->
+            <div id="modal-crear-jugador" class="modal oculto">
+                <div class="modal-contenido">
+                    <h2>Crear Jugador</h2>
+
+                    <label>Nombre</label>
+                    <input type="text" id="jugador-nombre">
+
+                    <label>Apellidos</label>
+                    <input type="text" id="jugador-apellidos">
+
+                    <label>Número</label>
+                    <input type="number" id="jugador-numero">
+
+                    <label>Posición</label>
+                    <select id="jugador-posicion">
+                    <option value="">Seleccione</option>
+                    <option value="DELANTERO">Delantero</option>
+                    <option value="MEDIO">Medio</option>
+                    <option value="DEFENSA">Defensa</option>
+                    <option value="PORTERO">Portero</option>
+                    </select>
+
+                    <label>Detalle de posición</label>
+                    <input type="text" id="jugador-posicion-detalle">
+
+                    <div class="modal-buttons">
+                    <button id="guardar-jugador" class="btn-guardar">Guardar jugador</button>
+                    <button id="cerrar-modal" class="btn-cancelar">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="lista-jugadores" class="jugadores-grid"></div>
+
+            <!-- MODAL PARA EDITAR JUGADOR -->
+            <div id="modal-editar-jugador" class="modal oculto">
+            <div class="modal-contenido">
+                <h2>Editar Jugador</h2>
+
+                <label>Nombre</label>
+                <input type="text" id="edit-nombre">
+
+                <label>Apellidos</label>
+                <input type="text" id="edit-apellidos">
+
+                <label>Número</label>
+                <input type="number" id="edit-numero">
+
+                <label>Posición</label>
+                <select id="edit-posicion">
+                <option value="PORTERO">Portero</option>
+                <option value="DEFENSA">Defensa</option>
+                <option value="MEDIO">Medio</option>
+                <option value="DELANTERO">Delantero</option>
+                </select>
+
+                <label>Detalle de posición</label>
+                <input type="text" id="edit-detalle">
+
+                <div class="modal-buttons">
+                <button id="guardar-cambios-jugador" class="btn-guardar">Guardar cambios</button>
+                <button id="cerrar-modal-editar" class="btn-cancelar">Cancelar</button>
+                </div>
+            </div>
+            </div>
+
+</div>
+
+
+
+
+    </main>
+
+        <script src="js/fetch_temporadas/admin_temporada.js"></script>
+        <script src="js/jugadores.js"></script>
+        <script src="js/fetch_jugadores/jugadores_post.js"></script>
+        <script src="js/fetch_jugadores/misJugadores_get.js"></script>
+        <script src="js/fetch_jugadores/jugadores_patch.js"></script>
+        <script src="js/fetch_jugadores/jugadores_delete.js"></script>
+    
+</body>
+</html>

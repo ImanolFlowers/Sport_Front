@@ -1,0 +1,86 @@
+/* ===============================
+   TABLA DE POSICIONES PREMIUM
+   =============================== */
+
+.tabla-container {
+  margin-top: 30px;
+  background: #ffffffcc;
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  overflow-x: auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Tabla */
+#tabla-posiciones {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* Filas separadas tipo tarjeta */
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Encabezado */
+#tabla-posiciones thead th {
+  background: #1173ab;
+  color: rgb(0, 0, 0);
+  padding: 14px 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 10px;
+}
+
+/* Filas estilo tarjeta */
+#tabla-posiciones tbody tr {
+  background: linear-gradient(135deg, #dfeef8, #2d7dbb);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover premium */
+#tabla-posiciones tbody tr:hover {
+  transform: translateY(-3px); /* Elevación */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+/* Celdas */
+#tabla-posiciones tbody td {
+  padding: 14px;
+  border-bottom: none; /* No queremos líneas */
+}
+
+/* Esquinas redondeadas para filas */
+#tabla-posiciones tbody tr td:first-child   { border-radius: 12px 0 0 12px; }
+#tabla-posiciones tbody tr td:last-child    { border-radius: 0 12px 12px 0; }
+
+/* ===============================
+   ESTILOS ESPECIALES PROFESIONALES
+   =============================== */
+
+/* Lider (posición 1) */
+#tabla-posiciones tbody tr:first-child {
+  background: linear-gradient(135deg, #94c9e7, #278adb);
+  border-left: 6px solid #28a745;
+  transform: scale(1.01);
+}
+
+/* Top 3 */
+#tabla-posiciones tbody tr:nth-child(-n+3) {
+  font-weight: 700;
+  color: #0d3e60;
+}
+
+/* Último lugar */
+#tabla-posiciones tbody tr:last-child {
+  background: linear-gradient(135deg, #dfeef8, #49a2e6);
+  border-left: 6px solid #d63031;
+}

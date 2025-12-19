@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Temporadas - Liga</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/temporadas.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/perfile.css">
+</head>
+<body>
+
+  <button id="menu-btn"><i class="fas fa-bars"></i></button>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Logo">
+      <span>LIGA DOMMSPORT</span>
+    </div>
+
+    <nav class="menu">
+      <button class="menu-btn" onclick="location.href='menu.html'"><i class="fas fa-home"></i> Inicio</button>
+      <button class="menu-btn active"><i class="fas fa-flag-checkered"></i> Temporadas</button>
+      <button class="menu-btn" onclick="location.href='equipos.html'"><i class="fas fa-users"></i> Equipos</button>
+      <button class="menu-btn" id="jugadores" onclick="location.href='jugadores.html'">
+            <i class="fas fa-futbol"></i> Jugadores
+            </button>
+      <button class="menu-btn" onclick="location.href='partidos.html'"><i class="fas fa-calendar-alt"></i> Partidos</button>
+      <button class="menu-btn" onclick="location.href='tablaGeneral.html'"><i class="fas fa-trophy"></i> Tabla</button>
+    </nav>
+
+  
+  </aside>
+
+<main class="content" id="contenido">
+  <h1>Temporadas</h1>
+
+  <!-- tarjeta para crear la temporada -->
+  <div class="tarjeta-crear-temporada">
+    <div class="info">
+      <h3>Crear una nueva temporada</h3>
+      <p>Puedes iniciar una nueva temporada para comenzar con los partidos y estadísticas.</p>
+    </div>
+    <button class="btn-crear-temporada" id="btn-crear-temporada">
+      <i class="fas fa-plus"></i> Activar temporada
+    </button>
+  </div>
+
+  <!-- temporada activa -->
+<h2>Temporada activa</h2>
+    <div id="temporada-activa" class="tarjeta-contenedor">
+      
+    </div>
+
+
+  <hr>
+
+  <!-- TOdas las demas temporadas -->
+  <h2>Todas las temporadas</h2>
+  <div id="todas-las-temporadas" class="tarjeta-contenedor">
+  </div>
+
+
+      <div class="user-dropdown">
+      <span id="user-name">Cargando...</span>
+      <button id="dropdown-btn"><i class="fas fa-chevron-down"></i></button>
+
+        <div id="dropdown-menu" class="dropdown hidden">
+            <button id="btn-perfil">Perfil</button>
+            <button id="btn-usuarios">Usuarios</button>
+            <button id="btn-logout">Cerrar sesión</button>
+          </div>
+    </div>
+</main>
+
+
+  <script src="js/fetch_temporadas/temporadas_fetch.js"></script>
+  <script src="js/fetch_temporadas/temporada_delete.js"></script>
+  <script src="js/fetch_perfil/perfil_get.js"></script>
+  <script src="js/perfil.js"></script>
+  <script src="js/usuarios.js"></script>
+  <script src="js/fetch_usuarios/usuario_get.js"></script>
+  <script src="js/jugadoresOcultar.js"></script>
+
+</body>
+</html>

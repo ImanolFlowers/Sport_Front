@@ -1,0 +1,293 @@
+/* ================================
+   MODAL - Fondo
+   ================================ */
+.modal.hidden {
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animación suave al aparecer */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ================================
+   CONTENIDO DEL MODAL
+   ================================ */
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+  animation: popUp 0.25s ease;
+}
+
+/* Animación del modal */
+@keyframes popUp {
+  from {
+    transform: translateY(10px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Título del modal */
+.modal-content h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a73e8;
+  text-align: center;
+}
+
+/* Inputs */
+.modal-content input,
+.modal-content select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.modal-content input:focus,
+.modal-content select:focus {
+  border-color: #1a73e8;
+}
+
+/* ================================
+   BOTONES DEL MODAL
+   ================================ */
+.modal-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+/* Botón guardar */
+.btn-guardar {
+  flex: 1;
+  background: #1a73e8;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background: #0f5cc4;
+  box-shadow: 0 4px 12px rgba(26,115,232,0.3);
+  transform: translateY(-2px);
+}
+
+/* Botón cancelar */
+.btn-cancelar {
+  flex: 1;
+  background: #e53935;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+  background: #c62828;
+  box-shadow: 0 4px 12px rgba(229,57,53,0.3);
+  transform: translateY(-2px);
+}
+
+/* Contenedor de acciones */
+.modal-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+/* ============================
+   BOTÓN GUARDAR CAMBIOS
+   ============================ */
+#btn-guardar-editar {
+  flex: 1;
+  background: #1a73e8;
+  color: white;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(26,115,232,0.25);
+}
+
+#btn-guardar-editar:hover {
+  background: #0f5cc4;
+  box-shadow: 0 5px 14px rgba(26,115,232,0.35);
+  transform: translateY(-2px);
+}
+
+/* ============================
+   BOTÓN CANCELAR
+   ============================ */
+#btn-cancelar-editar {
+  flex: 1;
+  background: #e53935;
+  color: white;
+  padding: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(229,57,53,0.25);
+}
+
+#btn-cancelar-editar:hover {
+  background: #c62828;
+  box-shadow: 0 5px 14px rgba(229,57,53,0.35);
+  transform: translateY(-2px);
+}
+
+
+
+/* ESTO ES DE LOS USUARIO SUS TARJETAS */
+/* ============================================
+   TABLA DE USUARIOS PREMIUM
+   ============================================ */
+.tabla-usuarios {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px; /* filas separadas tipo tarjetas */
+  margin-top: 25px;
+  font-size: 0.95rem;
+}
+
+/* Cada fila como tarjeta */
+.tabla-usuarios tbody tr {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tabla-usuarios tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Celdas */
+.tabla-usuarios td {
+  padding: 14px 12px;
+  text-align: center;
+  color: #333;
+}
+
+/* Títulos */
+.tabla-usuarios thead tr {
+  background: transparent;
+}
+
+.tabla-usuarios thead th {
+  padding: 12px 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  color: #5a5a5a;
+  letter-spacing: 0.7px;
+}
+
+/* Columna de índice (#) */
+.tabla-usuarios td:first-child {
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+/* ============================================
+   BOTONES PREMIUM
+   ============================================ */
+
+.btn-editar,
+.btn-eliminar {
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 20px; /* redondo premium */
+  margin: 2px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+/* Editar */
+.btn-editar {
+  background: #4caf50;
+  color: white;
+  box-shadow: 0 3px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-editar:hover {
+  background: #43a047;
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.45);
+}
+
+/* Eliminar */
+.btn-eliminar {
+  background: #e53935;
+  color: white;
+  box-shadow: 0 3px 8px rgba(229, 57, 53, 0.3);
+}
+
+.btn-eliminar:hover {
+  background: #d32f2f;
+  box-shadow: 0 4px 10px rgba(229, 57, 53, 0.45);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tabla-usuarios {
+    font-size: 0.8rem;
+  }
+
+  .btn-editar,
+  .btn-eliminar {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+}

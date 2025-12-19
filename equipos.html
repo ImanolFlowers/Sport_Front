@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/equipos.css">
+  <link rel="stylesheet" href="css/perfile.css">
+  <link rel="stylesheet" href="css/jugadores.css">
+  
+  <title>Equipos</title>
+</head>
+
+<body>
+  <aside class="sidebar" id="sidebar">
+
+    <div class="logo">
+      <img src="assets/logo.jpg" alt="Logo">
+      <span>LIGA DOMMSPORT</span>
+    </div>
+
+    <nav class="menu">
+      <button class="menu-btn" id="inicio" onclick="location.href='menu.html'">
+        <i class="fas fa-home"></i> Inicio
+      </button>
+
+      <button class="menu-btn" id="temporadas" onclick="location.href='temporadas.html'">
+        <i class="fas fa-flag-checkered"></i> Temporadas
+      </button>
+
+      <button class="menu-btn active" id="equipos" onclick="location.href='equipos.html'">
+        <i class="fas fa-users"></i> Equipos
+      </button>
+
+      <button class="menu-btn" id="jugadores" onclick="location.href='jugadores.html'">
+            <i class="fas fa-futbol"></i> Jugadores
+            </button>
+
+      <button class="menu-btn" id="partidos" onclick="location.href='partidos.html'">
+        <i class="fas fa-calendar-alt"></i> Partidos
+      </button>
+
+      <button class="menu-btn" id="tabla" onclick="location.href='tablaGeneral.html'">
+        <i class="fas fa-trophy"></i> Tabla
+      </button>
+    </nav>
+
+
+
+  </aside>
+
+<!-- contenido principal -->
+  <main class="content" id="contenido">
+
+    
+
+    <!-- boton para crear el equioi -->
+    <button id="btn-crear" class="btn-crear">Crear mi equipo</button>
+
+    <!-- este es el formulario para crear eeuipo -->
+    <div id="form-crear" class="formulario-oculto">
+      <h2>Crear Equipo</h2>
+
+      <label>Nombre del equipo</label>
+      <input type="text" id="nombre">
+
+      <label>Localidad del equipo</label>
+      <input type="text" id="lugar">
+
+      <button class="btn-guardar" id="btn-guardar-equipo">Guardar</button>
+    </div>
+
+    <!-- boton para que el administradir edite los equipos-->
+    <button id="btn-editar" class="btn-editar"> Editar mi equipo</button>
+
+    <!-- formilario para editar equipo -->
+  <div id="modal-editar" class="modal oculto">
+    <div class="modal-contenido">
+      <h2>Editar equipo</h2>
+
+      <label>Nombre del equipo</label>
+      <input type="text" id="modal-nombre">
+
+      <label>Localidad del equipo:</label>
+      <input type="text" id="modal-lugar">
+
+      <div class="modal-buttons">
+        <button id="modal-guardar" class="btn-guardar">Actualizar</button>
+        <button id="modal-cancelar" class="btn-cancelar">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+     
+
+
+    <!-- esta es la tarjeta de MI EQUIPO para el entrenador -->
+    <div id="mi-equipo"></div>
+    <button id="btn-mis-jugadores" class="btn-mis-jugadores"> Mis jugadores</button>
+
+    <h1>Equipos</h1>
+
+    <!-- todas las tarjetas de los equipos en general -->
+    <div id="lista-equipos" class="grid-equipos"></div>
+
+      <!-- formulario para editar equipo -->
+<div id="form-editar-tarjeta" class="formulario-oculto2">
+  <h3>Editar equipo</h3>
+
+  <label>Nombre:</label>
+  <input type="text" id="edit-nombre">
+
+  <label>Localidad del equipo:</label>
+  <input type="text" id="edit-localidad">
+
+  <button id="btn-guardar-editar-tarjeta">Guardar cambios</button>
+  <button id="btn-cancelar-editar-tarjeta">Cancelar</button>
+</div>
+
+      <div class="user-dropdown">
+      <span id="user-name">Cargando...</span>
+      <button id="dropdown-btn"><i class="fas fa-chevron-down"></i></button>
+
+        <div id="dropdown-menu" class="dropdown hidden">
+            <button id="btn-perfil">Perfil</button>
+            <button id="btn-usuarios">Usuarios</button>
+            <button id="btn-logout">Cerrar sesión</button>
+        </div>
+    </div>
+</main>
+  </main>
+
+  <script src="js/fetch_equipos/equipos_patch.js"></script>
+  <script src="js/fetch_equipos/equipos_get.js"></script>
+  <script src="js/fetch_equipos/equipos_post.js"></script>
+  <script src="js/fetch_equipos/equipos_getAdmin.js"></script>
+  <script src="js/fetch_temporadas/admin_temporada.js"></script>
+  <script src="js/fetch_equipos/equipos_patchAdmin.js"></script>
+  <script src="js/fetch_equipos/equipo_deleteAdmin.js"></script>
+  <script src="js/equipos.js"></script>
+  <script src="js/fetch_perfil/perfil_get.js"></script>
+  <script src="js/perfil.js"></script>
+  <script src="js/usuarios.js"></script>
+  <script src="js/fetch_usuarios/usuario_get.js"></script>
+
+<!-- scrips para los jugadores -->
+ <script src="js/jugadores.js"></script>
+ <script src="js/jugadoresOcultar.js"></script>
+
+</body>
+</html>

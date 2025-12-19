@@ -1,0 +1,148 @@
+/* ==========================
+   CONTENIDO PRINCIPAL
+   ========================== */
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================
+   TARJETA PARA CREAR TEMPORADA
+   ========================== */
+.tarjeta-crear-temporada {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tarjeta-crear-temporada .info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.tarjeta-crear-temporada .info p {
+    margin: 5px 0 0 0;
+    color: #555;
+}
+
+.btn-crear-temporada {
+    background: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    transition: background 0.25s ease-in-out;
+}
+.btn-crear-temporada:hover {
+    background: #135cb3;
+}
+
+/* ==========================
+   CONTENEDORES DE TARJETAS
+   ========================== */
+.tarjeta-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ==========================
+   BASE DE TODAS LAS TARJETAS
+   ========================== */
+.tarjeta-temporada,
+.tarjeta-temporada-activa {
+    border-radius: 12px;
+    padding: 15px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-temporada:hover,
+.tarjeta-temporada-activa:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   TARJETA ACTIVA (ESTILO ESPECIAL)
+   ========================== */
+.tarjeta-temporada-activa {
+    background: #e8f3ff;
+    border: 2px solid #1a73e8;
+    box-shadow: 0 0 12px rgba(26,115,232,0.3);
+}
+
+/* Badge ACTIVA */
+.badge-activa {
+    background: #1a73e8;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+/* ==========================
+   BOTONES DENTRO DE TARJETAS
+   ========================== */
+.btn-finalizar,
+.btn-eliminar {
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.25s ease;
+}
+
+/* Botón Finalizar */
+.btn-finalizar {
+    background: #d9534f;
+}
+.btn-finalizar:hover {
+    background: #b52d2a;
+}
+
+/* Botón Eliminar */
+.btn-eliminar {
+    background: #ff4d4d;
+}
+.btn-eliminar:hover {
+    background: #cc0000;
+}
+
+/* ==========================
+   RESPONSIVIDAD
+   ========================== */
+@media (max-width: 480px) {
+    .tarjeta-crear-temporada {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .tarjeta-temporada,
+    .tarjeta-temporada-activa {
+        width: 100%;
+    }
+}
